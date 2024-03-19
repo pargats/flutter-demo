@@ -63,15 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
         }
         var articles =
             snapshot.data!.docs.map((e) => e.data() as Article).toList();
-
+        var count = articles.length;
         return Scaffold(
             body: Center(
                 child: ListView.builder(
-          itemCount: articles.length,
+          itemCount: count,
           itemBuilder: (BuildContext context, int index) {
             final item = articles[index];
             return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
+              margin: EdgeInsets.fromLTRB(
+                  16, 8.0, 16, index == count - 1 ? 48.0 : 8.0),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.blue),
                   borderRadius: BorderRadius.circular(8.0)),
