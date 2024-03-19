@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                            DateFormat.MMMMd()
+                            DateFormat.yMMMMd()
                                 .add_jm()
                                 .format(item.timestamp.toDate()),
                             style: Theme.of(context).textTheme.bodySmall),
